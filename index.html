@@ -1,0 +1,43 @@
+<html>
+
+<body>
+    <h1>Primitive Photo App</h1>
+    <div>
+        <form id="imageUploadForm" action="/process" enctype="multipart/form-data" method="POST">
+            <input type="file" value="image" name="image" />
+            <br />
+            <br />
+            <label>Value of n to use:(n = number of primitives used, n < 500)</label>
+            <input type="text" value="10" name="number" />
+            <br />
+            <br />
+            <label>Select shape</label>
+            <select name="shape">
+                <option value="0">Combo</option>
+                <option value="1">Triangle</option>
+                <option value="2">Rectangle</option>
+                <option value="3">Ellipse</option>
+                <option value="4">Circle</option>
+                <option value="5">Rotated Rectangle</option>
+                <option value="6">Beziers</option>
+                <option value="7">Rotated Ellipse</option>
+                <option value="8">Polygon</option>
+            </select>
+            <br/>
+            <br/>
+            <input type="submit" value="upload Image" />
+        </form>
+        <div id="msg" hidden>
+            <p>Your Image will be downloaded within a few minutes</p>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+<script>
+    $("#imageUploadForm").submit(function (e) {
+        $("#msg").show();
+    }) 
+</script>
+
+</html>
